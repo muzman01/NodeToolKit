@@ -6,5 +6,5 @@ export const errorHandler = (
   err: string,
   code: number
 ) => {
-  return res.status(code).send({ errors: [{ message: err }] });
+  return res.status(code).send({ error: err });
 };

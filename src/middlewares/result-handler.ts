@@ -6,5 +6,5 @@ export const resultHandler = (
   data: any,
   code: number
 ) => {
-  return res.send(code).send({ result: data });
+  return res.status(code).send({ result: data });
 };
