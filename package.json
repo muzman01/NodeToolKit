@@ -1,0 +1,25 @@
+{
+  "name": "@muzman-framework",
+  "version": "1.0.0",
+  "description": "expressjs,nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muzman01/express-custom-middlewares.git"
+  },
+  "keywords": [
+    "express",
+    "mongo",
+    "nats",
+    "node"
+  ],
+  "author": "muzman01",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muzman01/express-custom-middlewares/issues"
+  },
+  "homepage": "https://github.com/muzman01/express-custom-middlewares#readme"
+}
