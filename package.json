@@ -1,10 +1,15 @@
 {
-  "name": "@muzman-framework",
+  "name": "@muzman/muzman-framework",
   "version": "1.0.0",
   "description": "expressjs,nodejs",
-  "main": "index.js",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "del ./build/*",
+    "build": "npm run clean && tsc"
   },
   "repository": {
     "type": "git",
@@ -21,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/muzman01/express-custom-middlewares/issues"
   },
-  "homepage": "https://github.com/muzman01/express-custom-middlewares#readme"
+  "homepage": "https://github.com/muzman01/express-custom-middlewares#readme",
+  "devDependencies": {
+    "del-cli": "^5.1.0",
+    "typescript": "^5.2.2"
+  }
 }
