@@ -1,6 +1,6 @@
 {
   "name": "@muzman/muzman-framework",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "expressjs,nodejs",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
