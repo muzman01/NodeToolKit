@@ -5,7 +5,6 @@ export const requireAuth = async (
   req: any,
   res: Response,
   next: NextFunction,
-  secret: string
 ) => {
   if (!req.header) {
     return res.status(401).json({ message: "Unauthorized" });
