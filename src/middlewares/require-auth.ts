@@ -4,7 +4,8 @@ import jwt from "jsonwebtoken";
 export const requireAuth = async (
   req: any,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
+  secret: string
 ) => {
   if (!req.header) {
     return res.status(401).json({ message: "Unauthorized" });
@@ -16,7 +17,7 @@ export const requireAuth = async (
     if (!token) {
       return res.status(401).json({ message: "Invalid Authentification" });
     }
-    jwt.verify(token, "muzman", (err: any, user: any) => {
+    jwt.verify(token, secret, (err: any, user: any) => {
       if (err) {
         return res.status(401).json({ message: "Invalid Authentification" });
       }
