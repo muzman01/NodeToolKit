@@ -1,29 +1,17 @@
-import { Response, NextFunction } from "express";
-import jwt from "jsonwebtoken";
+import { Request, Response, NextFunction } from 'express';
+import { validationResult } from 'express-validator';
+import { RequestValidationError } from '../errors/request-validation-error';
 
-export const requireAuth = async (
-  req: any,
+export const validateRequest = (
+  req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  if (!req.header) {
-    return res.status(401).json({ message: "Unauthorized" });
-  }
-  try {
-    let tmp = req.header("Authorization");
+  const errors = validationResult(req);
 
-    const token = tmp ? tmp.slice(7, tmp.length) : "";
-    if (!token) {
-      return res.status(401).json({ message: "Invalid Authentification" });
-    }
-    jwt.verify(token, "muzman", (err: any, user: any) => {
-      if (err) {
-        return res.status(401).json({ message: "Invalid Authentification" });
-      }
-      req.user = user;
-      next();
-    });
-  } catch (error: any) {
-    return res.status(500).json({ message: error.message });
+  if (!errors.isEmpty()) {
+    throw new RequestValidationError(errors.array());
   }
+
+  next();
 };
