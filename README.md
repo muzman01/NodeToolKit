@@ -15,7 +15,7 @@ Make sure you have the latest version of Node.js installed. This package assumes
 Easily add this npm package to your project with:
 
 ```bash
-npm i @muzman/@muzman/muzman-framework
+npm i @muzman/muzman-framework
 ```
 
 or
