@@ -12,19 +12,19 @@ export class EmailValidator {
   // Kara listeye alınmış domainlerin veya kelimelerin listesi.
   private static blacklist: string[] = ["example.com", "spam.com"]; // Örnek olarak belirli domainler ekleyin.
 
-  static async validate(email: string): Promise<ValidationResult> {
+  public async validate(email: string): Promise<ValidationResult> {
     // Format kontrolü.
-    if (!this.checkFormat(email)) {
+    if (!EmailValidator.checkFormat(email)) {
       return { isValid: false, reason: "Invalid format" };
     }
 
     // Kara liste kontrolü.
-    if (this.isBlacklisted(email)) {
+    if (EmailValidator.isBlacklisted(email)) {
       return { isValid: false, reason: "Domain is blacklisted" };
     }
 
     // Tekrarlayan karakter kontrolü.
-    if (this.hasConsecutiveCharacters(email)) {
+    if (EmailValidator.hasConsecutiveCharacters(email)) {
       return {
         isValid: false,
         reason: "Email contains consecutive repeating characters",
