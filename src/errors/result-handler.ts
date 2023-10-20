@@ -1,6 +1,3 @@
-import { Response } from "express";
-
-export const resultHandler = (data: any, code: number) => {
-  const res: Response = <Response>{};
+export const resultHandler = (res: any, data: any, code: number) => {
   return res.status(code).send({ result: data });
 };

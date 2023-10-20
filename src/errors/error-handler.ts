@@ -1,6 +1,3 @@
-import { Response } from "express";
-
-export const errorHandler = (err: string, code: number) => {
-  const res: Response = <Response>{};
+export const errorHandler = (res: any, err: string, code: number) => {
   return res.status(code).send({ error: err });
 };
