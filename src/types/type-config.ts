@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 export interface UserAttrs {
   email: string;
   password: string;
@@ -42,6 +43,94 @@ export interface AdminaccounttAttr {
   privilege_id: number;
   role: string;
   email_code: string;
+  // Additional audit fields
+  audit: {
+    created_by: string;
+    updated_by: string;
+    deleted_by: string;
+    created_at: Date;
+    updated_at: Date;
+    deleted_at: Date;
+  };
+}
+export interface AccountapikeyAttr {
+  account_level: number;
+  api_key: string;
+  customer_id: mongoose.Schema.Types.ObjectId;
+  ip_address: string;
+  label: string;
+  passphrase: string;
+  permission: string;
+  secret_key: string;
+  sub_account: string;
+  user_id: string;
+  // Additional audit fields
+  audit: {
+    created_by: string;
+    updated_by: string;
+    deleted_by: string;
+    created_at: Date;
+    updated_at: Date;
+    deleted_at: Date;
+  };
+}
+
+export interface AccountstatusreasonAttr {
+  customer_id: mongoose.Schema.Types.ObjectId;
+  email: string;
+  message: string;
+  reason_type: string;
+  display_type: string;
+  // Additional audit fields
+  audit: {
+    created_by: string;
+    updated_by: string;
+    deleted_by: string;
+    created_at: Date;
+    updated_at: Date;
+    deleted_at: Date;
+  };
+}
+
+export interface AdminroleAttr {
+  name: string;
+  privileges: any;
+  // Additional audit fields
+  audit: {
+    created_by: string;
+    updated_by: string;
+    deleted_by: string;
+    created_at: Date;
+    updated_at: Date;
+    deleted_at: Date;
+  };
+}
+
+export interface AccountwalletadressAttr {
+  address: any;
+  customer_id: mongoose.Schema.Types.ObjectId;
+  memo: string;
+  payment_id: string;
+  tag: string;
+  // Additional audit fields
+  audit: {
+    created_by: string;
+    updated_by: string;
+    deleted_by: string;
+    created_at: Date;
+    updated_at: Date;
+    deleted_at: Date;
+  };
+}
+
+export interface AccountloginhistoryAttr {
+  account_role: string;
+  device_type: string;
+  ip_address: string;
+  is_successful: string;
+  os_type: string;
+  user_agent: string;
+  username: string;
   // Additional audit fields
   audit: {
     created_by: string;

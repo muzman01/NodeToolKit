@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 // An interface that describes the properties
 // that are required to create a new User
-interface AdminaccounttAttr {
+interface AdminaccountAttr {
   email: string;
   password: string;
   is_active: boolean;
@@ -29,13 +29,13 @@ interface AdminaccounttAttr {
 
 // An interface that describes the properties
 // that a User Model has
-interface AdminaccounttModel extends mongoose.Model<AdminaccounttDoc> {
-  build(attrs: AdminaccounttAttr): AdminaccounttDoc;
+interface AdminaccountModel extends mongoose.Model<AdminaccountDoc> {
+  build(attrs: AdminaccountAttr): AdminaccountDoc;
 }
 
 // An interface that describes the properties
 // that a User Document has
-interface AdminaccounttDoc extends mongoose.Document {
+interface AdminaccountDoc extends mongoose.Document {
   email: string;
   password: string;
   is_active: boolean;
@@ -60,7 +60,7 @@ interface AdminaccounttDoc extends mongoose.Document {
   };
 }
 
-const AdminaccounttSchema = new mongoose.Schema(
+const AdminaccountSchema = new mongoose.Schema(
   {
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
@@ -93,13 +93,13 @@ const AdminaccounttSchema = new mongoose.Schema(
   }
 );
 
-AdminaccounttSchema.statics.build = (attrs: AdminaccounttAttr) => {
-  return new Adminaccountt(attrs);
+AdminaccountSchema.statics.build = (attrs: AdminaccountAttr) => {
+  return new Adminaccount(attrs);
 };
 
-const Adminaccountt = mongoose.model<AdminaccounttDoc, AdminaccounttModel>(
-  "Adminaccountt",
-  AdminaccounttSchema
+const Adminaccount = mongoose.model<AdminaccountDoc, AdminaccountModel>(
+  "Adminaccount",
+  AdminaccountSchema
 );
 
-export { Adminaccountt };
+export { Adminaccount };
