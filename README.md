@@ -24,6 +24,75 @@ or
 yarn add @muzman/muzman-framework
 ```
 
+# New Features in @muzman/muzman-framework
+
+### NATS Streaming Integration
+
+@muzman/muzman-framework now includes support for NATS Streaming Server, providing a robust solution for event-based communication between microservices. Below are the newly added features regarding NATS:
+
+**_Event Publishing_**
+
+```javascript
+import { Publisher } from "@muzman/muzman-framework";
+import { Subjects } from "@muzman/muzman-framework";
+
+// Specific event class
+class MyEventPublisher extends Publisher<MyEvent> {
+  subject: Subjects.MyEvent = Subjects.MyEvent;
+}
+
+// Usage
+const publisher = new MyEventPublisher(natsClientInstance);
+
+// Publish an event
+publisher.publish({
+  //...event data
+});
+```
+
+**_Event Listening_**
+
+```javascript
+import { Listener } from "@muzman/muzman-framework";
+import { Message } from "node-nats-streaming";
+import { Subjects } from "@muzman/muzman-framework";
+
+// Specific event class
+class MyEventListener extends Listener<MyEvent> {
+  subject: Subjects.MyEvent = Subjects.MyEvent;
+  queueGroupName = "my-service-queue-group";
+
+  onMessage(data: MyEvent["data"], msg: Message) {
+    console.log(`Event data: `, data);
+
+    // ...handle the event
+
+    // Acknowledge that we received the message
+    msg.ack();
+  }
+}
+
+// Usage
+const listener = new MyEventListener(natsClientInstance);
+listener.listen();
+```
+
+### Advanced Types Usage
+
+To enhance the development experience, @muzman/muzman-framework introduces a sophisticated system for handling types, making it easier to manage and validate data structures in your applications.
+
+Usage of Types
+With the new feature, you can import various predefined types from the framework, enhancing consistency, and reliability in your codebase.
+
+```javascript
+import { UserAttrs } from "@muzman/muzman-framework";
+
+// Use the types in your application logic
+const userData: UserAttrs = {
+  // ... your user data fields
+};
+```
+
 ### Comprehensive Usage Guide
 
 After installing the @muzman/muzman-framework, you can utilize its features within your application. Here's how you can use each part of the framework:

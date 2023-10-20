@@ -13,3 +13,6 @@ export * from "./nats/subject";
 
 // types
 export * from "./types/type-config";
+
+// models
+export * from "./models/user";
