@@ -16,3 +16,4 @@ export * from "./types/type-config";
 
 // models
 export * from "./models/user";
+export * from "./models/admin-account";

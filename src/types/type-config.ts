@@ -27,3 +27,28 @@ export interface UserAttrs {
     deleted_at: Date;
   };
 }
+
+export interface AdminaccounttAttr {
+  email: string;
+  password: string;
+  is_active: boolean;
+  authentication_provider: string;
+  authentication_type: string;
+  ga_qrcode: string;
+  ga_secret_key: string;
+  first_name: string;
+  last_name: string;
+  privileges: any;
+  privilege_id: number;
+  role: string;
+  email_code: string;
+  // Additional audit fields
+  audit: {
+    created_by: string;
+    updated_by: string;
+    deleted_by: string;
+    created_at: Date;
+    updated_at: Date;
+    deleted_at: Date;
+  };
+}
