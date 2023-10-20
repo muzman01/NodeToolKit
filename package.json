@@ -10,7 +10,8 @@
   "scripts": {
     "clean": "del ./build/*",
     "build": "npm run clean && tsc",
-    "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm run build && npm publish"
+    "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm run build && npm publish",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,10 @@
   },
   "homepage": "https://github.com/muzman01/express-custom-middlewares#readme",
   "devDependencies": {
+    "@types/jest": "^29.5.6",
     "del-cli": "^5.1.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"
   },
   "dependencies": {
