@@ -1,6 +1,6 @@
-# @muzman/muzman-framework
+# @muzman/node-toolkit
 
-`@muzman/muzman-framework` is a custom npm package written in TypeScript, designed to easily integrate authentication middleware and custom error/result handlers into your Express applications.
+`@muzman/node-toolkit` is a custom npm package written in TypeScript, designed to easily integrate authentication middleware and custom error/result handlers into your Express applications.
 
 ## Getting Started
 
@@ -15,26 +15,26 @@ Make sure you have the latest version of Node.js installed. This package assumes
 Easily add this npm package to your project with:
 
 ```bash
-npm i @muzman/muzman-framework
+npm i @muzman/node-toolkit
 ```
 
 or
 
 ```bash
-yarn add @muzman/muzman-framework
+yarn add @muzman/node-toolkit
 ```
 
-# New Features in @muzman/muzman-framework
+# New Features in @muzman/node-toolkit
 
 ### NATS Streaming Integration
 
-@muzman/muzman-framework now includes support for NATS Streaming Server, providing a robust solution for event-based communication between microservices. Below are the newly added features regarding NATS:
+@muzman/node-toolkit now includes support for NATS Streaming Server, providing a robust solution for event-based communication between microservices. Below are the newly added features regarding NATS:
 
 **_Event Publishing_**
 
 ```javascript
-import { Publisher } from "@muzman/muzman-framework";
-import { Subjects } from "@muzman/muzman-framework";
+import { Publisher } from "@muzman/node-toolkit";
+import { Subjects } from "@muzman/node-toolkit";
 
 // Specific event class
 class MyEventPublisher extends Publisher<MyEvent> {
@@ -53,9 +53,9 @@ publisher.publish({
 **_Event Listening_**
 
 ```javascript
-import { Listener } from "@muzman/muzman-framework";
+import { Listener } from "@muzman/node-toolkit";
 import { Message } from "node-nats-streaming";
-import { Subjects } from "@muzman/muzman-framework";
+import { Subjects } from "@muzman/node-toolkit";
 
 // Specific event class
 class MyEventListener extends Listener<MyEvent> {
@@ -79,13 +79,13 @@ listener.listen();
 
 ### Advanced Types Usage
 
-To enhance the development experience, @muzman/muzman-framework introduces a sophisticated system for handling types, making it easier to manage and validate data structures in your applications.
+To enhance the development experience, @muzman/node-toolkit introduces a sophisticated system for handling types, making it easier to manage and validate data structures in your applications.
 
 Usage of Types
 With the new feature, you can import various predefined types from the framework, enhancing consistency, and reliability in your codebase.
 
 ```javascript
-import { UserAttrs } from "@muzman/muzman-framework";
+import { UserAttrs } from "@muzman/node-toolkit";
 
 // Use the types in your application logic
 const userData: UserAttrs = {
@@ -95,12 +95,12 @@ const userData: UserAttrs = {
 
 ### Comprehensive Usage Guide
 
-After installing the @muzman/muzman-framework, you can utilize its features within your application. Here's how you can use each part of the framework:
+After installing the @muzman/node-toolkit, you can utilize its features within your application. Here's how you can use each part of the framework:
 
 1-Auth Middleware (requireAuth): This middleware function is used to verify the authentication of users. If the token is valid, it allows the request to proceed; otherwise, it responds with an error.
 
 ```javascript
-import { requireAuth } from "@muzman/muzman-framework";
+import { requireAuth } from "@muzman/node-toolkit";
 
 // Protect your routes with requireAuth
 app.use("/protected-route", requireAuth, (req, res) => {
@@ -111,7 +111,7 @@ app.use("/protected-route", requireAuth, (req, res) => {
 2-Error Handling (errorHandler): This function handles errors within your application. You can customize the status code and the message returned to the client.
 
 ```javascript
-import { errorHandler } from "@muzman/muzman-framework";
+import { errorHandler } from "@muzman/node-toolkit";
 
 // Usage in your Express error-handling middleware.
 app.use((err, req, res, next) => {
@@ -123,7 +123,7 @@ app.use((err, req, res, next) => {
 3-Result Handling (resultHandler): This function allows you to standardize the response you send from your API routes, ensuring you maintain consistency throughout your application.
 
 ```javascript
-import { resultHandler } from "@muzman/muzman-framework";
+import { resultHandler } from "@muzman/node-toolkit";
 
 app.get("/some-route", (req, res) => {
   // You can customize the payload and status code for the response.
@@ -131,7 +131,7 @@ app.get("/some-route", (req, res) => {
 });
 ```
 
-These are the core functionalities provided by @muzman/muzman-framework. By integrating this into your application, you ensure streamlined error handling, response management, and secure routes with authentication.
+These are the core functionalities provided by @muzman/node-toolkit. By integrating this into your application, you ensure streamlined error handling, response management, and secure routes with authentication.
 
 ### Contributing
 
