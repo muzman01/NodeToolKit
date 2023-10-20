@@ -10,3 +10,6 @@ export * from "./middlewares/validate-request";
 export * from "./nats/base-listener";
 export * from "./nats/base-publisher";
 export * from "./nats/subject";
+
+// types
+export * from "./types/type-config";
