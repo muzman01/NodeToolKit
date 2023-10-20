@@ -1,4 +1,4 @@
-interface UserAttrs {
+export interface UserAttrs {
   email: string;
   password: string;
   is_active: boolean;
@@ -27,4 +27,3 @@ interface UserAttrs {
     deleted_at: Date;
   };
 }
-export { UserAttrs };
