@@ -1,5 +1,5 @@
 {
-  "name": "@NodeToolKit",
+  "name": "@muzman/node-toolkit",
   "version": "1.0.0",
   "description": "expressjs,nodejs",
   "main": "./build/index.js",
