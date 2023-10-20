@@ -11,17 +11,6 @@ export * from "./nats/base-listener";
 export * from "./nats/base-publisher";
 export * from "./nats/subject";
 
-// types
-export * from "./types/type-config";
-
-// models
-export * from "./models/user";
-export * from "./models/admin-account";
-export * from "./models/admin-role";
-export * from "./models/account-status-reason";
-export * from "./models/account-api-key";
-export * from "./models/account-wallet-address";
-
 //config
 export { initialize } from "./config/config";
 

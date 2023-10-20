@@ -1,6 +1,6 @@
 {
-  "name": "@muzman/muzman-framework",
-  "version": "1.1.11",
+  "name": "@NodeToolKit",
+  "version": "1.0.0",
   "description": "expressjs,nodejs",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/muzman01/express-custom-middlewares.git"
+    "url": "git+https://github.com/muzman01/NodeToolKit.git"
   },
   "keywords": [
     "express",
@@ -26,9 +26,9 @@
   "author": "muzman01",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/muzman01/express-custom-middlewares/issues"
+    "url": "https://github.com/muzman01/NodeToolKit.git"
   },
-  "homepage": "https://github.com/muzman01/express-custom-middlewares#readme",
+  "homepage": "https://github.com/muzman01/NodeToolKit.git",
   "devDependencies": {
     "@types/jest": "^29.5.6",
     "del-cli": "^5.1.0",
