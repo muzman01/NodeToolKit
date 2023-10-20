@@ -1,10 +1,14 @@
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 
-export const resultHandler = (
-  req: Request,
-  res: Response,
-  data: any,
-  code: number
-) => {
-  return res.status(code).send({ result: data });
-};
+interface CustomResponse extends Response {
+  sendResult: (data: any, code?: number) => void;
+}
+
+export function resultHandler() {
+  return function (req: Request, res: CustomResponse, next: NextFunction) {
+    res.sendResult = (data: any, code: number = 200) => {
+      res.status(code).send({ result: data });
+    };
+    next();
+  };
+}
