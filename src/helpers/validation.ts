@@ -57,7 +57,7 @@ export class EmailValidator {
 
   private static hasConsecutiveCharacters(email: string): boolean {
     // Tekrarlayan karakterlerin olup olmadığını kontrol etmek için bir regex kullanıyoruz.
-    const regex = /(.)\1/; // Aynı karakterin tekrarladığını tespit eder.
+    const regex = /(.)\4/; // Aynı karakterin tekrarladığını tespit eder.
     return regex.test(email);
   }
 }
